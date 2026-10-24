@@ -11,6 +11,7 @@ Example 1:
 Input: head = [1,2,3,4]
 
 Output: [2,1,4,3]
+```
 */
 /**
  * Definition for singly-linked list.
@@ -52,7 +53,6 @@ class Solution
     }
 }
 
-
 // recursive approach
 class Solution
 {
@@ -81,3 +81,4 @@ class Solution
         return dummy.next;
     }
 }
+```
