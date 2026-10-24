@@ -22,6 +22,8 @@ Output: [2,1,4,3]
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+
+// iterative approach
 class Solution 
 {
     public ListNode swapPairs(ListNode head) 
@@ -47,5 +49,35 @@ class Solution
 
         }
     return dummy.next ;
+    }
+}
+
+
+// recursive approach
+class Solution
+{
+    public void swapfunc(ListNode prev, ListNode Head)
+    {
+        if( Head== null || Head.next==null) return;
+        ListNode f =  Head;
+        ListNode s = f.next;
+
+        f.next = s.next;
+        s.next = f;
+        prev.next=s;
+
+        swapfunc(f,f.next);
+
+
+    }
+    public ListNode swapPairs(ListNode head)
+    {
+        if(head==null || head.next==null) return head;
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode p = dummy;
+
+        swapfunc(p,head);
+        return dummy.next;
     }
 }
